@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Squeaky Clean - Clean your Mac without triggering anything</title>
+    <meta
+      name="description"
+      content="A free macOS app that locks your keyboard and trackpad so you can wipe your Mac down safely. Hold the spacebar for 3 seconds to unlock."
+    />
+    <link rel="icon" href="assets/icon.png" />
+    <link rel="apple-touch-icon" href="assets/icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Squeaky Clean for macOS" />
+    <meta
+      property="og:description"
+      content="Locks your keyboard and trackpad so you can clean your Mac without triggering anything."
+    />
+    <meta property="og:image" content="assets/idle.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="glow" aria-hidden="true"></div>
+
+    <header class="hero">
+      <img class="app-icon" src="assets/icon.png" alt="Squeaky Clean icon" width="120" height="120" />
+      <h1>Squeaky Clean</h1>
+      <p class="tagline">
+        Clean your Mac's keyboard and trackpad without typing gibberish, launching apps, or taking accidental
+        screenshots.
+      </p>
+
+      <div class="actions">
+        <a class="download" href="/api/download">
+          <span class="download-label">Download for macOS</span>
+          <span id="download-meta" class="download-meta">Free · Apple silicon &amp; Intel</span>
+        </a>
+
+        <div class="requirements">
+          <span>Requires macOS 14 (Sonoma) or later</span>
+          <a href="https://github.com/patel-priyank/Squeaky-Clean/releases" target="_blank" rel="noopener">
+            All releases
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section aria-label="Screenshots">
+        <div class="screenshots">
+          <figure>
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset="assets/idle-dark.jpg" />
+              <img
+                src="assets/idle-light.jpg"
+                alt="App before cleaning starts"
+                width="680"
+                height="950"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <figcaption>Pick what to lock, then start</figcaption>
+          </figure>
+
+          <figure>
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset="assets/active-dark.jpg" />
+              <img
+                src="assets/active-light.jpg"
+                alt="App with input locked during cleaning"
+                width="680"
+                height="950"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <figcaption>Input is locked until you hold the spacebar</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="centered">
+        <h2>How it works</h2>
+        <p class="section-intro">Three steps, and no way to unlock it by accident.</p>
+
+        <ol class="steps steps-3">
+          <li>
+            <span class="step-number">1</span>
+            <h3>Start cleaning</h3>
+            <p>One click locks your keyboard, and your trackpad too if you want it.</p>
+          </li>
+
+          <li>
+            <span class="step-number">2</span>
+            <h3>Wipe it down</h3>
+            <p>Press whatever you like. Nothing reaches your Mac while the lock is on.</p>
+          </li>
+
+          <li>
+            <span class="step-number">3</span>
+            <h3>Hold space for 3 seconds</h3>
+            <p>A deliberate gesture unlocks it, so a stray swipe of the cloth never can.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="centered">
+        <h2>Installing it</h2>
+        <p class="section-intro">A one-time setup, and then it stays out of your way.</p>
+
+        <ol class="steps steps-2">
+          <li>
+            <span class="step-number">1</span>
+            <h3>Download and unzip</h3>
+            <p>Grab the file from the button above and unzip it.</p>
+          </li>
+
+          <li>
+            <span class="step-number">2</span>
+            <h3>Move it to Applications</h3>
+            <p>Drag <strong>Squeaky Clean.app</strong> into your Applications folder.</p>
+          </li>
+
+          <li>
+            <span class="step-number">3</span>
+            <h3>Open it the first time</h3>
+            <p>
+              Right-click the app and choose <strong>Open</strong>, then confirm. macOS asks because the app isn't
+              distributed through the App Store.
+            </p>
+          </li>
+
+          <li>
+            <span class="step-number">4</span>
+            <h3>Grant Accessibility</h3>
+            <p>
+              Click <strong>Start cleaning</strong>, then allow it in
+              <strong>System Settings &rsaquo; Privacy &amp; Security &rsaquo; Accessibility</strong> and reopen the
+              app.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="centered">
+        <h2>About that permission</h2>
+
+        <div class="prose">
+          <p>
+            Squeaky Clean needs Accessibility permission because that's the only way macOS lets an app block keyboard
+            and trackpad input. It uses that access for exactly two things: deciding whether to block an input, and
+            watching for the spacebar so it knows when to unlock.
+          </p>
+
+          <p>
+            Nothing is logged, saved, or sent anywhere. There are no servers, no analytics, and no network requests —
+            and the
+            <a href="https://github.com/patel-priyank/Squeaky-Clean" target="_blank" rel="noopener">full source code</a>
+            is public if you'd like to check.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Free and open source</p>
+
+      <p>
+        <a href="https://github.com/patel-priyank/Squeaky-Clean" target="_blank" rel="noopener">GitHub</a>
+        <span>·</span>
+        <a href="https://github.com/patel-priyank/Squeaky-Clean/issues" target="_blank" rel="noopener">
+          Report an issue
+        </a>
+      </p>
+
+      <p class="credit">
+        Icon and illustrations from
+        <a href="https://www.flaticon.com" target="_blank" rel="noopener">Flaticon</a>
+      </p>
+    </footer>
+
+    <script>
+      (async () => {
+        const meta = document.getElementById('download-meta');
+
+        try {
+          const res = await fetch('https://api.github.com/repos/patel-priyank/Squeaky-Clean/releases/latest');
+
+          if (!res.ok) {
+            return;
+          }
+
+          const release = await res.json();
+          const asset = (release.assets || []).find(a => a.name.toLowerCase().endsWith('.zip'));
+          const version = (release.tag_name || '').replace(/^v/, '');
+
+          const parts = [];
+
+          if (version) {
+            parts.push(`v${version}`);
+          }
+
+          parts.push('Free');
+
+          if (asset) {
+            parts.push(`${(asset.size / 1_000_000).toFixed(1)} MB`);
+          }
+
+          meta.textContent = parts.join(' · ');
+        } catch {
+          // keep the default label
+        }
+      })();
+    </script>
+  </body>
+</html>
