@@ -20,13 +20,6 @@
     <meta property="og:image" content="assets/idle.png" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
-
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -95,7 +88,7 @@
         <h2>How it works</h2>
         <p class="section-intro">Three steps, and no way to unlock it by accident.</p>
 
-        <ol class="steps steps-3">
+        <ol class="steps">
           <li>
             <span class="step-number">1</span>
             <h3>Start cleaning</h3>
@@ -120,7 +113,7 @@
         <h2>Installing it</h2>
         <p class="section-intro">A one-time setup, and then it stays out of your way.</p>
 
-        <ol class="steps steps-2">
+        <ol class="steps-flow">
           <li>
             <span class="step-number">1</span>
             <h3>Download and unzip</h3>
@@ -185,7 +178,7 @@
         </a>
       </p>
 
-      <p class="credit">
+      <p>
         Icon and illustrations from
         <a href="https://www.flaticon.com" target="_blank" rel="noopener">Flaticon</a>
       </p>
@@ -220,7 +213,7 @@
 
           meta.textContent = parts.join(' · ');
         } catch {
-          // keep the default label
+          // keep the default meta
         }
       })();
     </script>
