@@ -28,7 +28,7 @@ Cleaning a MacBook's keyboard and trackpad with the Mac still on usually means e
 
 1. Download the latest release from the [Releases](../../releases) page.
 2. Unzip and drag `Squeaky Clean.app` into your Applications folder.
-3. **First launch**: right-click the app and choose **Open**, then confirm in the dialog that appears. This is a one-time step required because this build isn't distributed through the Mac App Store or signed with a paid Apple Developer certificate.
+3. **First launch**: double-click the app. macOS will refuse to open it and offer only **Done** or **Move to Trash**, click **Done**. Then go to **System Settings > Privacy & Security**, scroll down to the Security section, and click **Open Anyway** next to the message about Squeaky Clean. Confirm once more in the dialog that appears. This is a one-time step required because this build isn't distributed through the Mac App Store or signed with a paid Apple Developer certificate. (On macOS Sonoma and earlier, right-clicking the app and choosing **Open** works instead. Starting with Sequoia, Apple removed that bypass for unnotarized apps, so the Privacy & Security route above is required.)
 
 ## Accessibility permission
 
@@ -46,7 +46,7 @@ No external dependencies or package managers involved, it's a single Xcode proje
 
 ## Known limitations
 
-- Not notarized or signed with a paid Apple Developer certificate, hence the right-click-to-open step on first launch.
+- Not notarized or signed with a paid Apple Developer certificate, hence the Privacy & Security step on first launch (or right-click-to-open on macOS Sonoma and earlier).
 - **A few system-level shortcuts can't be blocked, by design.** macOS handles these outside the normal input event pipeline that accessibility permissions give apps access to, so no app, including this one, can intercept them:
   - **Mission Control, Launchpad, and Show Desktop**, whether triggered by keyboard, trackpad gesture, or hot corner
   - **All trackpad system gestures**, not just the ones above, including pinch-to-zoom, smart zoom, rotate, and swipe between Spaces or pages. These are recognized by a separate multi-touch subsystem that never passes through the same path as ordinary clicks and drags, which means a cloth wiped across the trackpad can occasionally register as a gesture mid-clean
