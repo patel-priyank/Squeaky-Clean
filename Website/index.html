@@ -165,6 +165,46 @@
           </p>
         </div>
       </section>
+
+      <section class="centered">
+        <h2>Known limitations</h2>
+        <p class="section-intro">A few shortcuts live below what any app can reach.</p>
+
+        <div class="prose">
+          <p>
+            macOS handles a handful of shortcuts through a system-level path that sits outside the accessibility
+            permission apps use to block input, so Squeaky Clean can't intercept them no matter what. This isn't a gap
+            in the app, it's a hard boundary Apple puts around these specific things:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Mission Control, Launchpad, and Show Desktop</strong>, from keyboard, trackpad gesture, or hot
+              corner
+            </li>
+            <li>
+              <strong>All trackpad system gestures</strong>, including pinch-to-zoom, smart zoom, rotate, and swipe
+              between Spaces or pages, since these are recognized by a separate multi-touch subsystem your wipe could
+              occasionally trigger
+            </li>
+            <li><strong>Hot corners</strong>, watched by a background system process rather than a normal click</li>
+            <li><strong>Touch ID</strong>, and the power button's lock, sleep, and shutdown behavior</li>
+            <li>
+              <strong>Caps Lock's hardware state and keyboard LED</strong>, applied at the driver level on many Macs
+            </li>
+            <li>The <strong>Fn/Globe key's</strong> built-in emoji picker and dictation shortcut</li>
+            <li>
+              On external Bluetooth keyboards, <strong>device-switch keys</strong> handled by the keyboard's own
+              firmware
+            </li>
+          </ul>
+
+          <p>
+            Everything else, typing, clicking, scrolling, and standard shortcuts, stays fully locked while cleaning mode
+            is on.
+          </p>
+        </div>
+      </section>
     </main>
 
     <footer>

@@ -47,6 +47,16 @@ No external dependencies or package managers involved, it's a single Xcode proje
 ## Known limitations
 
 - Not notarized or signed with a paid Apple Developer certificate, hence the right-click-to-open step on first launch.
+- **A few system-level shortcuts can't be blocked, by design.** macOS handles these outside the normal input event pipeline that accessibility permissions give apps access to, so no app, including this one, can intercept them:
+  - **Mission Control, Launchpad, and Show Desktop**, whether triggered by keyboard, trackpad gesture, or hot corner
+  - **All trackpad system gestures**, not just the ones above, including pinch-to-zoom, smart zoom, rotate, and swipe between Spaces or pages. These are recognized by a separate multi-touch subsystem that never passes through the same path as ordinary clicks and drags, which means a cloth wiped across the trackpad can occasionally register as a gesture mid-clean
+  - **Hot corners**, since they're triggered by cursor position and watched by a background system process rather than a discrete click
+  - **Touch ID**, and the power button's lock/sleep/shutdown behavior
+  - **Caps Lock's hardware state and keyboard LED**, which on many Macs is applied at the driver level independent of whether the keystroke reaches any app
+  - **The Fn/Globe key's built-in shortcut** for the emoji picker or dictation, invoked through the same kind of system-level path as Mission Control
+  - On external Bluetooth keyboards, **device-switch keys** (e.g. Logitech Easy-Switch) handled by the keyboard's own firmware during reconnection
+
+  Everything else, including all typing, clicking, scrolling, and standard keyboard shortcuts, is fully blocked while cleaning mode is active.
 
 ## Credits
 
