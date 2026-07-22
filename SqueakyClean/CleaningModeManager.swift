@@ -165,6 +165,8 @@ final class CleaningModeManager: ObservableObject {
         
         var mask: CGEventMask = 0
         
+        mask |= 1 << 14
+        mask |= 1 << CGEventType.scrollWheel.rawValue
         mask |= 1 << CGEventType.keyDown.rawValue
         mask |= 1 << CGEventType.keyUp.rawValue
         mask |= 1 << CGEventType.flagsChanged.rawValue
@@ -247,6 +249,13 @@ final class CleaningModeManager: ObservableObject {
                 } else {
                     spacebarKeyUp()
                 }
+            }
+            
+            return nil
+            
+        case CGEventType(rawValue: 14)!:
+            guard let nsEvent = NSEvent(cgEvent: event), nsEvent.subtype.rawValue == 8 else {
+                return Unmanaged.passRetained(event)
             }
             
             return nil
