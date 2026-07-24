@@ -1,3 +1,4 @@
+import Sparkle
 import SwiftUI
 
 @main
@@ -18,6 +19,11 @@ struct SqueakyCleanApp: App {
             CommandGroup(replacing: .appInfo) {
                 Button("About \(AppInfo.displayName)") {
                     showAboutPanel()
+                }
+            }
+            CommandGroup(after: .appInfo) {
+                Button("Check for Updates…") {
+                    appDelegate.updaterController.checkForUpdates(nil)
                 }
             }
         }
@@ -65,6 +71,12 @@ func showAboutPanel() {
 }
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
+    let updaterController = SPUStandardUpdaterController(
+        startingUpdater: true,
+        updaterDelegate: nil,
+        userDriverDelegate: nil
+    )
+    
     func applicationWillFinishLaunching(_ notification: Notification) {
         NSWindow.allowsAutomaticWindowTabbing = false
     }
