@@ -3,6 +3,14 @@
   <channel>
     <title>Squeaky Clean Updates</title>
     <item>
+      <title>1.1.0</title>
+      <pubDate>Fri, 24 Jul 2026 03:27:00 +0100</pubDate>
+      <sparkle:version>2</sparkle:version>
+      <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/patel-priyank/Squeaky-Clean/releases/download/1.1.0/SqueakyClean.zip" sparkle:edSignature="0CVhyMRzoVNIrEGQXOk76dgDq6fpALaXNT6hkRzPKwOXOXUvWTc4JicXohXcE3H4inSfCbwl5w6HNVSN8jIdAA==" length="2883623" type="application/octet-stream" />
+    </item>
+    <item>
       <title>1.0.1</title>
       <pubDate>Wed, 22 Jul 2026 16:58:00 +0100</pubDate>
       <sparkle:version>1</sparkle:version>
