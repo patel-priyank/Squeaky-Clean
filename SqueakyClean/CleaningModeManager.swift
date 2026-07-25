@@ -144,6 +144,8 @@ final class CleaningModeManager: ObservableObject {
         isCompleting = false
         isHolding = false
         
+        NSSound(named: "Glass")?.play()
+        
         finishTeardown()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + crossfadeDuration) { [weak self] in
